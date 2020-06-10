@@ -1,21 +1,29 @@
 pragma solidity 0.5.1;
 
-contract MyContract {
+contract PeopleContract {
     uint256 public peopleCount = 0;
-    mapping(uint => Person) public people;
-
-    address owner;
 
     modifier onlyOwner() {
         require(msg.sender == owner);
         _;
     }
-
+    //struct
     struct Person {
         uint _id;
         string _firstName;
         string _lastName;
+        unit age;
+        bool vegan;
     }
+    
+    // variable
+    address public owner;
+    //mapping
+    mapping(uint => Person) public people;
+
+    
+
+    
 
     constructor() public {
         owner = msg.sender;
