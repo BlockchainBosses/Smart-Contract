@@ -7,11 +7,11 @@ contract PeopleContract {
     }
     //struct
     struct Person {
-        uint id;
-        string firstName;
-        string lastName;
-        unit age;
-        bool vegan;
+        uint _id;
+        string _firstName;
+        string _lastName;
+        unit _age;
+        bool _vegan;
     }
     
     // variable
@@ -36,5 +36,9 @@ contract PeopleContract {
 
     function incrementCount() internal {
         peopleCount += 1;
+    }
+    //function : get FirstName function
+    function getFirstName(uint _id) public returns(string _fristName)
+        return people[_id].firstName;
     }
 }
