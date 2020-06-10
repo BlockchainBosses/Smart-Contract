@@ -1,6 +1,7 @@
 pragma solidity 0.5.1;
 
-contract PeopleContract {
+// People smart contract
+contract People{
     uint256 public peopleCount = 0;
     }
     //struct
@@ -33,6 +34,10 @@ contract PeopleContract {
     //function : increment People count
     function incrementCount() internal {
         peopleCount += 1;
+    }
+    //function 
+    function getCount() constant returns(uint256){
+        return peopleCount;
     }
     //function : get FirstName function
     function getFirstName(uint _id) public returns(string _firstName)
